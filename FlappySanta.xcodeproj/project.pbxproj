@@ -37,7 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4FA2792E1BC1638300C7F50A /* FlappyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FA2792E1BC1638300C7F50A /* FlappySanta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappySanta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA279311BC1638300C7F50A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FA279351BC1638300C7F50A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		4FA279371BC1638300C7F50A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		4FA2792F1BC1638300C7F50A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4FA2792E1BC1638300C7F50A /* FlappyBird.app */,
+				4FA2792E1BC1638300C7F50A /* FlappySanta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4FA2792D1BC1638300C7F50A /* FlappyBird */ = {
+		4FA2792D1BC1638300C7F50A /* FlappySanta */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FA279441BC1638300C7F50A /* Build configuration list for PBXNativeTarget "FlappyBird" */;
+			buildConfigurationList = 4FA279441BC1638300C7F50A /* Build configuration list for PBXNativeTarget "FlappySanta" */;
 			buildPhases = (
 				4FA2792A1BC1638300C7F50A /* Sources */,
 				4FA2792B1BC1638300C7F50A /* Frameworks */,
@@ -185,9 +185,9 @@
 			);
 			dependencies = (
 			);
-			name = FlappyBird;
+			name = FlappySanta;
 			productName = FlappyBird;
-			productReference = 4FA2792E1BC1638300C7F50A /* FlappyBird.app */;
+			productReference = 4FA2792E1BC1638300C7F50A /* FlappySanta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -197,15 +197,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = pmst;
+				ORGANIZATIONNAME = "Robert McLean";
 				TargetAttributes = {
 					4FA2792D1BC1638300C7F50A = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = VFYSHLXST9;
 						LastSwiftMigration = 0810;
 					};
 				};
 			};
-			buildConfigurationList = 4FA279291BC1638300C7F50A /* Build configuration list for PBXProject "FlappyBird" */;
+			buildConfigurationList = 4FA279291BC1638300C7F50A /* Build configuration list for PBXProject "FlappySanta" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,7 +219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4FA2792D1BC1638300C7F50A /* FlappyBird */,
+				4FA2792D1BC1638300C7F50A /* FlappySanta */,
 			);
 		};
 /* End PBXProject section */
@@ -375,10 +376,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VFYSHLXST9;
 				INFOPLIST_FILE = FlappyBird/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pmst.FlappyBird;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertmclean.flappysanta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -388,10 +390,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VFYSHLXST9;
 				INFOPLIST_FILE = FlappyBird/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pmst.FlappyBird;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertmclean.flappysanta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -400,7 +403,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4FA279291BC1638300C7F50A /* Build configuration list for PBXProject "FlappyBird" */ = {
+		4FA279291BC1638300C7F50A /* Build configuration list for PBXProject "FlappySanta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FA279421BC1638300C7F50A /* Debug */,
@@ -409,7 +412,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FA279441BC1638300C7F50A /* Build configuration list for PBXNativeTarget "FlappyBird" */ = {
+		4FA279441BC1638300C7F50A /* Build configuration list for PBXNativeTarget "FlappySanta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FA279451BC1638300C7F50A /* Debug */,
