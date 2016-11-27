@@ -2,7 +2,7 @@
 //  GameScene.swift
 //  FlappyBird
 //
-//  Created by Robert McLean on 11/27/16.
+//  Created by Robert McLean on 15/10/4.
 //  Copyright (c) 2015年 pmst. All rights reserved.
 //
 
