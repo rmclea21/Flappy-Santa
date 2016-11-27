@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  FlappyBird
+//  Flappy Santa
 //
 //  Created by pmst on 15/10/4.
 //  Copyright © 2015年 pmst. All rights reserved.
