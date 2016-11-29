@@ -147,7 +147,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         let offsetX = player.size.width * player.anchorPoint.x
         let offsetY = player.size.height * player.anchorPoint.y
         
-        let path = CGPathCreateMutable()
+        let path = CGPathCreateMutable() //physics path//
         
         CGPathMoveToPoint(path, nil, 17 - offsetX, 23 - offsetY)
         CGPathAddLineToPoint(path, nil, 39 - offsetX, 22 - offsetY)
