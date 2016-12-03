@@ -34,7 +34,8 @@ struct PhysicsCategory {
 
 class GameScene: SKScene,SKPhysicsContactDelegate{
     
-    // MARK: - 常量
+    // Contants
+    
     let kGravity:CGFloat = -1500.0
     let kImpulse:CGFloat = 400
     let kGroundSpeed:CGFloat = 150.0
@@ -45,9 +46,10 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
     let kMargin: CGFloat = 20.0
     let kAnimDelay = 0.3
     let kMinDegrees: CGFloat = -90
-    let kMaxDegrees: CGFloat = 25
+    let kMaxDegrees: CGFloat = 3
     let kAngularVelocity: CGFloat = 1000.0
     
+    // Variables
     
     let worldNode = SKNode()
     var playableStart:CGFloat = 0
@@ -67,10 +69,9 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
     var lastTouchTime: NSTimeInterval = 0
     var lastTouchY: CGFloat = 0.0
     
-    // MARK: - 变量
+   
+    // Music and sfx
     
-    
-    // MARK: - 音乐
     let dingAction = SKAction.playSoundFileNamed("ding.wav", waitForCompletion: false)
     let flapAction = SKAction.playSoundFileNamed("flapping.wav", waitForCompletion: false)
     let whackAction = SKAction.playSoundFileNamed("whack.wav", waitForCompletion: false)
@@ -95,7 +96,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         
         addChild(worldNode)
         
-        // 以下为替换内容 
+        // Game start statements
         if gameState == .MainMenu {
             switchToMainMenu()
         } else {
@@ -103,7 +104,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         }
     }
     
-    // MARK: Setup Method
+    // Setup Method
     func setupBackground(){
         // 1
         let background = SKSpriteNode(imageNamed: "Background")
@@ -116,7 +117,7 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         playableStart = size.height - background.size.height
         playableHeight = background.size.height
         
-        // 新增
+        // New Game Position
         let lowerLeft = CGPoint(x: 0, y: playableStart)
         let lowerRight = CGPoint(x: size.width, y: playableStart)
         
@@ -131,10 +132,10 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         for i in 0..<2{
             let foreground = SKSpriteNode(imageNamed: "Ground")
             foreground.anchorPoint = CGPoint(x: 0, y: 1)
-            // 改动1
+            // Change 1
             foreground.position = CGPoint(x: CGFloat(i) * size.width, y: playableStart)
             foreground.zPosition = Layer.Foreground.rawValue
-            // 改动2
+            // Change 2
             foreground.name = "foreground"
             worldNode.addChild(foreground)
         }
@@ -149,12 +150,12 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         
         let path = CGPathCreateMutable() //physics path//
         
-        CGPathMoveToPoint(path, nil, 17 - offsetX, 23 - offsetY)
-        CGPathAddLineToPoint(path, nil, 39 - offsetX, 22 - offsetY)
-        CGPathAddLineToPoint(path, nil, 38 - offsetX, 10 - offsetY)
-        CGPathAddLineToPoint(path, nil, 21 - offsetX, 0 - offsetY)
-        CGPathAddLineToPoint(path, nil, 4 - offsetX, 1 - offsetY)
-        CGPathAddLineToPoint(path, nil, 3 - offsetX, 15 - offsetY)
+        CGPathMoveToPoint(path, nil, 17 - offsetX, 27 - offsetY)
+        CGPathAddLineToPoint(path, nil, 100 - offsetX, 27 - offsetY)
+        CGPathAddLineToPoint(path, nil, 100 - offsetX, 10 - offsetY)
+        CGPathAddLineToPoint(path, nil, 92 - offsetX, 0 - offsetY)
+        CGPathAddLineToPoint(path, nil, 0 - offsetX, 1 - offsetY)
+        CGPathAddLineToPoint(path, nil, 0 - offsetX, 27 - offsetY)
         
         CGPathCloseSubpath(path)
         
@@ -349,13 +350,13 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         player.runAction(SKAction.repeatActionForever(playerAnimation))
         
     }
-    // MARK: - GamePlay
+    //GamePlay
     func createObstacle()->SKSpriteNode{
         let sprite = SKSpriteNode(imageNamed: "Cactus")
         sprite.zPosition = Layer.Obstacle.rawValue
         
         sprite.userData = NSMutableDictionary()
-        //========以下为新增内容=========
+        //Obstacles Physics
         let offsetX = sprite.size.width * sprite.anchorPoint.x
         let offsetY = sprite.size.height * sprite.anchorPoint.y
         
@@ -429,15 +430,15 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
         
     }
     func flapPlayer(){
-        // 发出一次煽动翅膀的声音
+        // Move Player Physics
         runAction(flapAction)
-        // 重新设定player的速度！！
+        // Resets the poistion of player
         playerVelocity  = CGPointMake(0, kImpulse)
         playerAngularVelocity = kAngularVelocity.degreesToRadians()
         lastTouchTime = lastUpdateTime
         lastTouchY = player.position.y
         
-        // 使得帽子下上跳动
+        // need comment here
         let moveUp = SKAction.moveByX(0, y: 12, duration: 0.15)
         moveUp.timingMode = .EaseInEaseOut
         let moveDown = moveUp.reversedAction()
